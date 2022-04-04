@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .box-shadow {
+        -moz-box-shadow: 0 0 25px #3b82f6;
+        -webkit-box-shadow: 0 0 25px #3b82f6;
+        box-shadow: 0 0 25px #3b82f6;
+    }
+}
