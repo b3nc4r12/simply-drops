@@ -4,21 +4,17 @@ import type { ConnectorData } from "wagmi-core"
 import { useState } from "react"
 import Image from "next/image"
 
+type ConnectFunction = () => Promise<{
+    data?: ConnectorData<any> | undefined,
+    error?: Error | undefined
+}>
+
 const Header: React.FunctionComponent = () => {
     const [open, setOpen] = useState<boolean>(false);
 
-    const connectWithMetamask: () => Promise<{
-        data?: ConnectorData<any> | undefined,
-        error?: Error | undefined
-    }> = useMetamask();
-    const connectWithWalletConnect: () => Promise<{
-        data?: ConnectorData<any> | undefined,
-        error?: Error | undefined
-    }> = useWalletConnect();
-    const connectWithCoinbase: () => Promise<{
-        data?: ConnectorData<any> | undefined,
-        error?: Error | undefined
-    }> = useCoinbaseWallet();
+    const connectWithMetamask: ConnectFunction = useMetamask();
+    const connectWithWalletConnect: ConnectFunction = useWalletConnect();
+    const connectWithCoinbase: ConnectFunction = useCoinbaseWallet();
     const address: string | undefined = useAddress();
     const disconnectWallet: () => void = useDisconnect();
 
@@ -40,7 +36,7 @@ const Header: React.FunctionComponent = () => {
                     {address ? "Sign Out" : "Connect Wallet"}
                 </button>
                 {open && (
-                    <div className="sm:absolute sm:top-16 sm:right-0 bg-black box-shadow rounded-lg text-white w-48">
+                    <div className="sm:absolute sm:top-16 sm:right-0 bg-black box-shadow rounded-lg text-white w-48 z-10">
                         <button
                             onClick={() => connectWithMetamask().then(() => setOpen(false))}
                             className="py-2 px-3 flex items-center gap-2 hover:bg-blue-900 w-full rounded-t-lg">
