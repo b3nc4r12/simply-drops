@@ -3,7 +3,7 @@ import Image from "next/image"
 import { urlFor } from "@/sanity"
 import Link from "next/link"
 
-const Collection: React.FC<Collection> = ({ description, nftCollectionName, mainImage, slug }) => {
+const Collection: React.FunctionComponent<Collection> = ({ description, nftCollectionName, mainImage, slug }) => {
     return (
         <Link href={`/nft/${slug.current}`} passHref={false}>
             <div className="box-shadow rounded-xl p-5 flex space-x-6 hover:scale-[102%] transition transform ease-out">
@@ -12,6 +12,7 @@ const Collection: React.FC<Collection> = ({ description, nftCollectionName, main
                     width={200}
                     height={200}
                     objectFit="cover"
+                    alt={nftCollectionName}
                 />
                 <div className="flex flex-col justify-between">
                     <div>

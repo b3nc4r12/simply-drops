@@ -45,6 +45,7 @@ const Header: React.FunctionComponent = () => {
                                 width={24}
                                 height={24}
                                 objectFit="contain"
+                                alt="Metamask"
                             />
                             Metamask
                         </button>
@@ -56,6 +57,7 @@ const Header: React.FunctionComponent = () => {
                                 width={24}
                                 height={24}
                                 objectFit="contain"
+                                alt="WalletConnect"
                             />
                             WalletConnect
                         </button>
@@ -67,6 +69,7 @@ const Header: React.FunctionComponent = () => {
                                 width={24}
                                 height={24}
                                 objectFit="contain"
+                                alt="Coinbase"
                             />
                             Coinbase Wallet
                         </button>
