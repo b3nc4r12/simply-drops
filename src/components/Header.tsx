@@ -26,7 +26,7 @@ const Header: React.FunctionComponent = () => {
                 </h1>
             </Link>
             <div className="relative flex flex-col sm:flex-row space-y-6 sm:space-y-0 sm:space-x-6 items-center">
-                {address && <p className="text-blue-500">
+                {address && <p className="text-blue-500 text-center">
                     You&apos;re logged in with wallet: {address.substring(0, 5)}...{address.substring(address.length - 4)}
                 </p>}
                 <button
